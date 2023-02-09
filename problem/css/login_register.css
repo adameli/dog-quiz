@@ -45,14 +45,14 @@ body #register_back_color {
     margin: 15px 0;
 }
 
-.container_login #login {
+.container_login .button {
     background-color: white;
     padding: 15px 0;
     font-size: 20px;
     cursor: pointer;
 }
 
-.container_login #register {
+.container_login .register {
     text-decoration: underline;
     font-size: 20px;
     margin-top: 50px;
