@@ -13,15 +13,18 @@
     src: url("../fonts/RobotoCondensed-Light.ttf");
 }
 
-/* 
- */
+:root {
+    --bold: "roboto_bold";
+    --regular: "roboto_regular";
+    --light: "roboto_light";
+}
 
 body {
     margin: 0;
     background-color: black;
 }
 
-#wrapper {
+.wrapper {
     box-sizing: border-box;
     height: 100vh;
     padding: 20px;
@@ -55,4 +58,8 @@ footer {
     margin-top: auto;
     font-size: 16px;
     font-family: "roboto_regular";
+}
+
+footer p {
+    margin: 0;
 }
