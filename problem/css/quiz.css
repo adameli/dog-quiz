@@ -1,0 +1,51 @@
+body #quiz_back_color {
+    background: rgb(238, 174, 202);
+    background: linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 26%);
+}
+
+#container_quiz {
+    display: block;
+
+}
+
+#container_quiz #logout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.887);
+    border-radius: 5px;
+    margin-top: 20px;
+    font-family: var(--regular);
+}
+
+#logout_button,
+#logout div {
+    font-size: 18px;
+}
+
+#loading_logo {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    margin-top: 40px;
+}
+
+.dog_logo {
+    background-image: url(../media/logo.png);
+
+}
+
+#anwsers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+#anwsers>button {
+    padding: 10px 0;
+    font-size: 17px;
+}

@@ -22,11 +22,14 @@
 body {
     margin: 0;
     background-color: black;
+    display: flex;
+    justify-content: center;
 }
 
 .wrapper {
     box-sizing: border-box;
     height: 100vh;
+    max-width: 340px;
     padding: 20px;
     border-radius: 20px;
 
