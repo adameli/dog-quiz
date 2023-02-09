@@ -1,7 +1,7 @@
 "use strict"
 
 const prefix = "https://teaching.maumt.se/apis/access/";
-loginOrRegister();
+// loginOrRegister();
 async function loginOrRegister(userName, password) {
 
     try {
@@ -10,6 +10,7 @@ async function loginOrRegister(userName, password) {
         console.log(response);
         const resource = await response.json();
         console.log(resource);
+        return { respons: response, user: resource.data };
     } catch (e) {
 
         console.log(e);

@@ -10,7 +10,7 @@ body #register_back_color {
     background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 0%);
 }
 
-#container_login {
+.container_login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@ body #register_back_color {
     font-family: var(--regular);
 }
 
-#container_login h1 {
+.container_login h1 {
     font-family: var(--bold);
     font-size: 40px;
     margin-bottom: 40px;
@@ -40,19 +40,19 @@ body #register_back_color {
     height: 30px;
 }
 
-#container_login #feedback {
+.container_login #feedback {
     font-size: 14px;
     margin: 15px 0;
 }
 
-#container_login #login {
+.container_login #login {
     background-color: white;
     padding: 15px 0;
     font-size: 20px;
     cursor: pointer;
 }
 
-#container_login #register {
+.container_login #register {
     text-decoration: underline;
     font-size: 20px;
     margin-top: 50px;
