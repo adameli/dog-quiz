@@ -1,7 +1,7 @@
 "use strict"
 
 async function userWantsToLogin() {
-
+    document.querySelector(".loading_bar").setAttribute("id", "display_flex");
     const userName = document.querySelector("#user_name").value;
     const password = document.querySelector("#password").value;
     console.log(userName);
@@ -12,7 +12,7 @@ async function userWantsToLogin() {
     console.log(response.user);
 
     if (response.respons.ok) {
-        console.log("hej");
+        document.querySelector(".loading_bar").setAttribute("id", "display_none");
         document.querySelector(".container_login").id = "display_none";
         document.querySelector(".container_quiz").id = "display_block";
         document.querySelector(".wrapper").setAttribute("id", "quiz_back_color");

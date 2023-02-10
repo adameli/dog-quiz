@@ -37,6 +37,7 @@ body {
 
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 header {
@@ -67,10 +68,39 @@ footer p {
     margin: 0;
 }
 
+
+
+.loading_bar {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+
+    background-color: rgba(255, 255, 255, 0.72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading_feedback {
+    padding: 25px 0;
+    width: 298px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-family: var(--regular);
+}
+
 #display_none {
     display: none;
 }
 
 #display_block {
     display: block;
+}
+
+#display_flex {
+    display: flex;
 }
