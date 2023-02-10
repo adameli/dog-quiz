@@ -20,3 +20,10 @@ async function loginUser(userName, password) {
     }
 };
 
+
+fetch("https://dog.ceo/api/breed/australian/shepherd/images/random")
+    .then(r => {
+        console.log(r);
+        return r.json()
+    })
+    .then(dog => console.log(dog))
