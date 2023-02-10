@@ -1,19 +1,21 @@
 "use strict"
 
 const prefix = "https://teaching.maumt.se/apis/access/";
-// loginOrRegister();
-async function loginOrRegister(userName, password) {
+
+async function loginUser(userName, password) {
 
     try {
 
-        const response = await fetch(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userName}&password=${password}`)
-        console.log(response);
-        const resource = await response.json();
-        console.log(resource);
-        return { respons: response, user: resource.data };
+        const serverResponse = await fetch(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userName}&password=${password}`);
+        const userCredentials = await serverResponse.json();
+        return { response: serverResponse, user: userCredentials.data };
+
     } catch (e) {
 
         console.log(e);
+        loadingPage.setAttribute("id", "display_flex");
+        closeButton.setAttribute("id", "display_block")
+        feedbackAnswer.textContent = "NetworkError! Please try again."
 
     }
 };
