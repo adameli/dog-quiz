@@ -7,8 +7,8 @@ async function fetchFunction(URL) {
     try {
 
         const serverResponse = await fetch(URL);
-        const userCredentials = await serverResponse.json();
-        return { response: serverResponse, user: userCredentials.data };
+        const resource = await serverResponse.json();
+        return { response: serverResponse, resource: resource };
 
     } catch (e) {
 
