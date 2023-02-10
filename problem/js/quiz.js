@@ -1,11 +1,11 @@
 
-console.log(ALL_BREEDS.length);
 console.log(ALL_BREEDS);
 const numberArray = createNumberArray(82);
 console.log(numberArray);
 startQuiz("adamski")
 
 async function startQuiz(user_name) {
+    document.querySelector("#user_name_in_quiz").textContent = user_name;
     const dogsArray = [];
     for (let i = 0; i < 4; i++) {
         let randomNumber = random_number(numberArray.length);
@@ -34,8 +34,16 @@ async function startQuiz(user_name) {
     dogImage.style.backgroundImage = `url('${responseObjektQuiz.resource.message}')`
 
     function controllAnswer(event) {
-        console.log(event);
-    }
+        console.log(event.currentTarget);
+        document.querySelector(".final_answer").setAttribute("id", "display_flex");
+        if (event.currentTarget.textContent === randomDog.name) {
+            document.querySelector(".right_or_wrong").setAttribute("id", "correkt");
+            document.querySelector(".right_or_wrong div").textContent = "CORRECT";
+        } else {
+            document.querySelector(".right_or_wrong").setAttribute("id", "in_correkt");
+            document.querySelector(".right_or_wrong div").textContent = "I'm afraid not...:-(";
+        };
+    };
 };
 
 function random_number(max) {

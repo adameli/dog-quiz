@@ -50,3 +50,15 @@ body #quiz_back_color {
     padding: 10px 0;
     font-size: 17px;
 }
+
+.right_or_wrong {
+    font-size: 30px;
+}
+
+#correkt {
+    background-color: greenyellow;
+}
+
+#in_correkt {
+    background-color: coral;
+}
