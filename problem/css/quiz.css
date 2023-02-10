@@ -25,16 +25,18 @@ body #quiz_back_color {
 }
 
 #loading_logo {
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 300px;
     margin-top: 40px;
+    border-radius: 20px;
+    height: 300px;
 }
 
 .dog_logo {
     background-image: url(../media/logo.png);
 }
+
 
 #anwsers {
     display: grid;
