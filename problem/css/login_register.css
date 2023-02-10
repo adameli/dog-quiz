@@ -37,12 +37,20 @@ body #register_back_color {
 }
 
 .user_pass_input input {
+    font-family: var(--regular);
+    font-size: 16px;
     height: 30px;
+    padding-left: 5px;
 }
 
-.container_login #feedback {
+.container_login .login_feedback {
+    padding: 5px 0;
     font-size: 14px;
     margin: 15px 0;
+}
+
+.container_login #wrong {
+    background-color: white;
 }
 
 .container_login .button {

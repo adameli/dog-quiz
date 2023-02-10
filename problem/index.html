@@ -30,7 +30,7 @@
                 <label for="password">Password:</label>
                 <input id="password" type="password">
             </div>
-            <div class="login" id="feedback">Let the magic start!</div>
+            <div class="login login_feedback" id="feedback">Let the magic start!</div>
             <button class="login button login_button" id="display_block">Login</button>
             <button class="login button register_button" id="display_none">Register</button>
             <div class="login register new" id="display_block">New to this? Register for free</div>
@@ -57,7 +57,10 @@
             <p>The Dog Quiz is made possible thanks to the free API by <a href="">DOG CEO ZINE</a></p>
         </footer>
         <div class="loading_bar" id="display_none">
-            <div class="loading_feedback">Contacting server...</div>
+            <div class="loading_feedback">
+                <div id="contact_server">Contacting server...</div>
+                <button class="close_button" id="display_none">CLOSE</button>
+            </div>
         </div>
     </div>
     <script src="./js/data.js"></script>

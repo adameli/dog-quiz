@@ -16,13 +16,31 @@ async function userWantsToLogin() {
         document.querySelector(".container_login").id = "display_none";
         document.querySelector(".container_quiz").id = "display_block";
         document.querySelector(".wrapper").setAttribute("id", "quiz_back_color");
-
     };
+    if (response.respons.status === 404) {
+        document.querySelector(".login_feedback").setAttribute("id", "wrong");
+        document.querySelector(".login_feedback").textContent = "Wrong user name or password";
+        document.querySelector(".loading_bar").setAttribute("id", "display_none")
+    };
+    if (response.respons.status === 418) {
+        document.querySelector(".close_button").setAttribute("id", "display_block")
+        document.querySelector("#contact_server").textContent = "The server thinks it's not a teapot!"
+    };
+
 };
 
 async function userWantsToRegister() {
     const userName = document.querySelector("#user_name").value;
     const password = document.querySelector("#password").value;
+
+    if (response.respons.status === 404) {
+        document.querySelector(".close_button").setAttribute("id", "display_block")
+        document.querySelector("#contact_server").textContent = "Sorry that name is taken. Please try with another one."
+    };
+    if (response.respons.status === 418) {
+        document.querySelector(".close_button").setAttribute("id", "display_block")
+        document.querySelector("#contact_server").textContent = "The server thinks it's not a teapot!"
+    };
 
     // const postBody = {
     //     action: "register",
@@ -66,3 +84,7 @@ function alredyHaveAnAccount() {
     document.querySelector("h1").textContent = "LOGIN";
 
 };
+
+function closeFeedbackPage() {
+    loadingPage.setAttribute("id", "display_none");
+}

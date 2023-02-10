@@ -6,7 +6,7 @@ async function loginOrRegister(userName, password) {
 
     try {
 
-        const response = await fetch("https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=adamski&password=dog")
+        const response = await fetch(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userName}&password=${password}`)
         console.log(response);
         const resource = await response.json();
         console.log(resource);
@@ -16,5 +16,5 @@ async function loginOrRegister(userName, password) {
         console.log(e);
 
     }
-}
+};
 
