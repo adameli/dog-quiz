@@ -21,9 +21,9 @@ async function fetchFunction(URL) {
 };
 
 
-fetch("https://dog.ceo/api/breed/australian/shepherd/images/random")
-    .then(r => {
-        console.log(r);
-        return r.json()
-    })
-    .then(dog => console.log(dog))
+// fetch("https://dog.ceo/api/breed/australian/shepherd/images/random")
+//     .then(r => {
+//         console.log(r);
+//         return r.json()
+//     })
+//     .then(dog => console.log(dog))

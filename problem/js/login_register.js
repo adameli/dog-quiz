@@ -11,6 +11,7 @@ async function userWantsToLogin() {
         document.querySelector(".container_login").id = "display_none";
         document.querySelector(".container_quiz").id = "display_block";
         wrapper.setAttribute("id", "quiz_back_color");
+
     };
     if (responseObjekt.response.status === 404) {
         loginFeedback.setAttribute("id", "wrong");

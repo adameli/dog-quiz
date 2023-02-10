@@ -11,7 +11,7 @@ body #register_back_color {
 }
 
 .container_login {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     margin-top: auto;
