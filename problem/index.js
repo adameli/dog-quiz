@@ -5,8 +5,12 @@ document.querySelector(".register_button").addEventListener("click", userWantsTo
 document.querySelector(".new").addEventListener("click", changeToRegisterLayout);
 document.querySelector(".have").addEventListener("click", alredyHaveAnAccount);
 document.querySelector(".close_button").addEventListener("click", closeFeedbackPage);
+document.querySelector(".right_or_wrong .close_button").addEventListener("click", refreshQuiz);
+document.querySelector("#logout_button").addEventListener("click", logOut);
 
 const wrapper = document.querySelector(".wrapper");
+const loginContainer = document.querySelector(".container_login");
+const quizContainer = document.querySelector(".container_quiz");
 const loadingPage = document.querySelector(".loading_bar");
 const loginFeedback = document.querySelector(".login_feedback");
 const userNameInput = document.querySelector("#user_name");

@@ -11,6 +11,8 @@ async function userWantsToLogin() {
         document.querySelector(".container_login").id = "display_none";
         document.querySelector(".container_quiz").id = "display_block";
         wrapper.setAttribute("id", "quiz_back_color");
+        document.querySelector("#user_name_in_quiz").textContent = responseObjekt.resource.data.user_name;
+        startQuiz();
 
     };
     if (responseObjekt.response.status === 404) {

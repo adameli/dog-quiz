@@ -4,6 +4,8 @@ jag har andvänt bredden 340 och höjden 666
 
 frågor:
 
+hur gör jag med de olika fontsen?
+
 vf funkar inte min transition med background?
 
 hur ska jag gå till väga med ändring av layouten när man går från regiester och tillbaka?
