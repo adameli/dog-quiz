@@ -26,6 +26,8 @@ async function userWantsToLogin() {
 async function userWantsToRegister() {
 
     loadingPage.setAttribute("id", "display_flex");
+    console.log(userNameInput.value);
+    console.log(passwordInput.value);
     const postBody = {
         action: "register",
         user_name: userNameInput.value,
@@ -40,20 +42,35 @@ async function userWantsToRegister() {
             body: JSON.stringify(postBody),
         });
         console.log(post);
-        if (post.status === 200) {
-            const resource = await post.json();
-            console.log("new user have been added", resource);
-            closeButton.setAttribute("id", "display_block");
-            feedbackAnswer.textContent = "Register Complete.  Please proceed to login.";
-        };
-        if (post.status === 409) {
-            closeButton.setAttribute("id", "display_block");
-            feedbackAnswer.textContent = "Sorry that name is taken. Please try with another one.";
-        };
-        if (post.status === 418) {
-            closeButton.setAttribute("id", "display_block");
-            feedbackAnswer.textContent = "The server thinks it's not a teapot!";
-        };
+
+        closeButton.setAttribute("id", "display_block");
+
+        switch (post.status) {
+            case 200:
+                console.log("new user have been added");
+                feedbackAnswer.textContent = "Register Complete.  Please proceed to login.";
+                break;
+            case 409:
+                feedbackAnswer.textContent = "Sorry that name is taken. Please try with another one.";
+                break;
+            case 418:
+                feedbackAnswer.textContent = "The server thinks it's not a teapot!";
+                break;
+        }
+        // if (post.status === 200) {
+        //     const resource = await post.json();
+        //     console.log("new user have been added", resource);
+        //     closeButton.setAttribute("id", "display_block");
+        //     feedbackAnswer.textContent = "Register Complete.  Please proceed to login.";
+        // };
+        // if (post.status === 409) {
+        //     closeButton.setAttribute("id", "display_block");
+        //     feedbackAnswer.textContent = "Sorry that name is taken. Please try with another one.";
+        // };
+        // if (post.status === 418) {
+        //     closeButton.setAttribute("id", "display_block");
+        //     feedbackAnswer.textContent = "The server thinks it's not a teapot!";
+        // };
     } catch (e) {
 
         console.log(e);
@@ -72,7 +89,8 @@ function changeToRegisterLayout() {
     document.querySelector(".register_button").setAttribute("id", "display_block");
     userNameInput.value = "";
     passwordInput.value = "";
-    document.querySelector("#feedback").textContent = "Ready when you are";
+    loginFeedback.setAttribute("id", "feedback");
+    loginFeedback.textContent = "Ready when you are...";
     document.querySelector("h1").textContent = "REGISTER";
 };
 function alredyHaveAnAccount() {
@@ -83,11 +101,12 @@ function alredyHaveAnAccount() {
     document.querySelector(".register_button").setAttribute("id", "display_none");
     passwordInput.value = "";
     userNameInput.value = "";
-    document.querySelector("#feedback").textContent = "Let the magic start!";
+    loginFeedback.textContent = "Let the magic start!";
     document.querySelector("h1").textContent = "LOGIN";
 
 };
 
 function closeFeedbackPage() {
     loadingPage.setAttribute("id", "display_none");
+    feedbackAnswer.textContent = "Contacting server...";
 };
