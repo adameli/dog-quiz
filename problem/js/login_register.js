@@ -41,10 +41,8 @@ async function userWantsToRegister() {
             headers: { "Content-type": "application/json; charset=UTF-8" },
             body: JSON.stringify(postBody),
         });
-        console.log(post);
 
         closeButton.setAttribute("id", "display_block");
-
         switch (post.status) {
             case 200:
                 console.log("new user have been added");
@@ -57,20 +55,7 @@ async function userWantsToRegister() {
                 feedbackAnswer.textContent = "The server thinks it's not a teapot!";
                 break;
         }
-        // if (post.status === 200) {
-        //     const resource = await post.json();
-        //     console.log("new user have been added", resource);
-        //     closeButton.setAttribute("id", "display_block");
-        //     feedbackAnswer.textContent = "Register Complete.  Please proceed to login.";
-        // };
-        // if (post.status === 409) {
-        //     closeButton.setAttribute("id", "display_block");
-        //     feedbackAnswer.textContent = "Sorry that name is taken. Please try with another one.";
-        // };
-        // if (post.status === 418) {
-        //     closeButton.setAttribute("id", "display_block");
-        //     feedbackAnswer.textContent = "The server thinks it's not a teapot!";
-        // };
+
     } catch (e) {
 
         console.log(e);
