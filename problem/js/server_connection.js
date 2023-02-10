@@ -2,11 +2,11 @@
 
 const prefix = "https://teaching.maumt.se/apis/access/";
 
-async function loginUser(userName, password) {
+async function fetchFunction(URL) {
 
     try {
 
-        const serverResponse = await fetch(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userName}&password=${password}`);
+        const serverResponse = await fetch(URL);
         const userCredentials = await serverResponse.json();
         return { response: serverResponse, user: userCredentials.data };
 
