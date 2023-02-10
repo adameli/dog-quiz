@@ -3,7 +3,7 @@
 async function userWantsToLogin() {
 
     loadingPage.setAttribute("id", "display_flex");
-    const responseObjekt = await loginUser(userNameInput.value, passwordInput.value);
+    const responseObjekt = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
     console.log(responseObjekt.user);
 
     if (responseObjekt.response.ok) {
