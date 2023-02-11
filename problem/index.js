@@ -26,4 +26,4 @@ const buttonContainer = document.querySelector(".answers");
 //* optimera koden när det kommer till att gå till och från inlogningen och registreringen
 //* transaktionen mellan login och registrerings sidan
 //* städa upp i html med classer och id
-//* sticky login
+

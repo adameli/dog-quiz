@@ -15,11 +15,9 @@ async function startQuiz() {
     for (let i = 0; i < 4; i++) {
         let randomNumber = random_number(numberArray.length);
         const randomIndex = numberArray.splice(randomNumber, 1);
-        dogsArray.push(ALL_BREEDS[randomIndex])
+        dogsArray.push(ALL_BREEDS[randomIndex]);
     };
     const randomDog = dogsArray[random_number(dogsArray.length)];
-    // console.log(randomDog);
-
 
     dogButtons.forEach(button => button.addEventListener("click", controllAnswer));
 
@@ -31,7 +29,7 @@ async function startQuiz() {
     const responseObjektQuiz = await fetchFunction(`https://dog.ceo/api/breed/${randomDog.url}/images/random`);
 
     loadingPage.setAttribute("id", "display_none");
-    dogImage.style.backgroundImage = `url('${responseObjektQuiz.resource.message}')`
+    dogImage.style.backgroundImage = `url('${responseObjektQuiz.resource.message}')`;
 
     function controllAnswer(event) {
         document.querySelector(".final_answer").setAttribute("id", "display_flex");
@@ -49,15 +47,15 @@ async function startQuiz() {
 function random_number(max) {
     // Returnerar en random siffra mellan 0 och max - 1
     return Math.floor(max * Math.random());
-}
+};
 
 function createNumberArray(n) {
     let numberArray = [];
     for (let i = 0; i < n; i++) {
         numberArray.push(i);
-    }
+    };
     return numberArray;
-}
+};
 
 function logOut() {
     console.log("logout");
@@ -65,16 +63,16 @@ function logOut() {
     loginContainer.setAttribute("id", "display_flex");
     quizContainer.setAttribute("id", "display_none");
     localStorage.removeItem("userLogin");
-}
+};
 
 function refreshQuiz() {
     console.log("hej");
     document.querySelector(".final_answer").setAttribute("id", "display_none");
     startQuiz();
-}
+};
 
 function loadingForNewImage() {
     loadingPage.setAttribute("id", "display_flex");
     feedbackAnswer.textContent = "Getting a random image...";
     buttonContainer.setAttribute("id", "display_none");
-}
+};

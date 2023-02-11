@@ -14,16 +14,9 @@ async function fetchFunction(URL) {
 
         console.log(e);
         loadingPage.setAttribute("id", "display_flex");
-        closeButton.setAttribute("id", "display_block")
+        closeButton.setAttribute("id", "display_block");
         feedbackAnswer.textContent = "NetworkError! Please try again."
 
-    }
+    };
 };
 
-
-// fetch("https://dog.ceo/api/breed/australian/shepherd/images/random")
-//     .then(r => {
-//         console.log(r);
-//         return r.json()
-//     })
-//     .then(dog => console.log(dog))

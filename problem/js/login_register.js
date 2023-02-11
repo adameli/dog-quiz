@@ -1,24 +1,19 @@
 "use strict"
-console.log("login");
+
 async function userWantsToLogin() {
 
     closeButton.setAttribute("id", "display_none");
     loadingPage.setAttribute("id", "display_flex");
     feedbackAnswer.textContent = "Contacting server...";
     const responseObjekt = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
-    // console.log(responseObjekt);
 
     if (responseObjekt.response.ok) {
-
         let userData = {
             userName: userNameInput.value,
             password: passwordInput.value,
         };
-        console.log(userData);
         let convertedUserData = JSON.stringify(userData);
         localStorage.setItem("userLogin", convertedUserData);
-
-
 
         loadingPage.setAttribute("id", "display_none");
         document.querySelector(".container_login").id = "display_none";
@@ -26,16 +21,15 @@ async function userWantsToLogin() {
         wrapper.setAttribute("id", "quiz_back_color");
         document.querySelector("#user_name_in_quiz").textContent = responseObjekt.resource.data.user_name;
         startQuiz();
-
     };
     if (responseObjekt.response.status === 404) {
         loginFeedback.setAttribute("id", "wrong");
         loginFeedback.textContent = "Wrong user name or password";
-        loadingPage.setAttribute("id", "display_none")
+        loadingPage.setAttribute("id", "display_none");
     };
     if (responseObjekt.response.status === 418) {
-        closeButton.setAttribute("id", "display_block")
-        feedbackAnswer.textContent = "The server thinks it's not a teapot!"
+        closeButton.setAttribute("id", "display_block");
+        feedbackAnswer.textContent = "The server thinks it's not a teapot!";
     };
 };
 
@@ -72,14 +66,14 @@ async function userWantsToRegister() {
             case 418:
                 feedbackAnswer.textContent = "The server thinks it's not a teapot!";
                 break;
-        }
+        };
 
     } catch (e) {
 
         console.log(e);
         loadingPage.setAttribute("id", "display_flex");
-        closeButton.setAttribute("id", "display_block")
-        feedbackAnswer.textContent = "NetworkError! Please try again."
+        closeButton.setAttribute("id", "display_block");
+        feedbackAnswer.textContent = "NetworkError! Please try again.";
 
     };
 };
