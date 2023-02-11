@@ -24,6 +24,6 @@ const buttonContainer = document.querySelector(".answers");
 //! TO DO CLEAN UP
 //* gör en funktion till "loadingPage" som tar emot "id" och en sträng dvs vad som ska stå som feedback.
 //* optimera koden när det kommer till att gå till och från inlogningen och registreringen
-//* transaktionen mellan login och registrerings sidan
+//* få in alla fonts
 //* städa upp i html med classer och id
 
