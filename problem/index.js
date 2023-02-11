@@ -18,3 +18,5 @@ const passwordInput = document.querySelector("#password");
 const closeButton = document.querySelector(".close_button");
 const feedbackAnswer = document.querySelector("#contact_server");
 const dogImage = document.querySelector("#loading_logo");
+const dogButtons = document.querySelectorAll(".answers > button");
+const buttonContainer = document.querySelector(".answers");

@@ -3,11 +3,14 @@
 let numberArray = createNumberArray(82);
 
 async function startQuiz() {
+    loadingForNewImage();
+    dogImage.style.backgroundImage = "";
 
     if (numberArray.length === 6) {
         numberArray = createNumberArray(82);
     };
 
+    buttonContainer.removeAttribute("id", "display_none");
     const dogsArray = [];
     for (let i = 0; i < 4; i++) {
         let randomNumber = random_number(numberArray.length);
@@ -17,7 +20,7 @@ async function startQuiz() {
     const randomDog = dogsArray[random_number(dogsArray.length)];
     console.log(randomDog);
 
-    const dogButtons = document.querySelectorAll("#anwsers > button");
+
     dogButtons.forEach(button => button.addEventListener("click", controllAnswer));
 
     dogsArray.forEach((dog, index = 0) => {
@@ -27,7 +30,7 @@ async function startQuiz() {
 
     const responseObjektQuiz = await fetchFunction(`https://dog.ceo/api/breed/${randomDog.url}/images/random`);
 
-    dogImage.classList.remove("dog_logo");
+    loadingPage.setAttribute("id", "display_none");
     dogImage.style.backgroundImage = `url('${responseObjektQuiz.resource.message}')`
 
     function controllAnswer(event) {
@@ -67,4 +70,10 @@ function refreshQuiz() {
     console.log("hej");
     document.querySelector(".final_answer").setAttribute("id", "display_none");
     startQuiz();
+}
+
+function loadingForNewImage() {
+    loadingPage.setAttribute("id", "display_flex");
+    feedbackAnswer.textContent = "Getting a random image...";
+    buttonContainer.setAttribute("id", "display_none");
 }
