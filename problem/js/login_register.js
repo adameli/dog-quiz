@@ -7,29 +7,31 @@ async function userWantsToLogin() {
     feedbackAnswer.textContent = "Contacting server...";
     const responseObjekt = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
 
-    if (responseObjekt.response.ok) {
-        let userData = {
-            userName: userNameInput.value,
-            password: passwordInput.value,
-        };
-        let convertedUserData = JSON.stringify(userData);
-        localStorage.setItem("userLogin", convertedUserData);
+    switch (responseObjekt.response.status) {
+        case 200:
+            let userData = {
+                userName: userNameInput.value,
+                password: passwordInput.value,
+            };
+            let convertedUserData = JSON.stringify(userData);
+            localStorage.setItem("userLogin", convertedUserData);
 
-        loadingPage.setAttribute("id", "display_none");
-        document.querySelector(".container_login").id = "display_none";
-        document.querySelector(".container_quiz").id = "display_block";
-        wrapper.classList.add("quiz_back_color");
-        document.querySelector("#user_name_in_quiz").textContent = responseObjekt.resource.data.user_name;
-        startQuiz();
-    };
-    if (responseObjekt.response.status === 404) {
-        loginFeedback.setAttribute("id", "wrong");
-        loginFeedback.textContent = "Wrong user name or password";
-        loadingPage.setAttribute("id", "display_none");
-    };
-    if (responseObjekt.response.status === 418) {
-        closeButton.setAttribute("id", "display_block");
-        feedbackAnswer.textContent = "The server thinks it's not a teapot!";
+            loadingPage.setAttribute("id", "display_none");
+            loginContainer.setAttribute("id", "display_none");
+            quizContainer.setAttribute("id", "display_block");
+            wrapper.classList.add("quiz_back_color");
+            document.querySelector("#user_name_in_quiz").textContent = responseObjekt.resource.data.user_name;
+            startQuiz();
+            break;
+        case 404:
+            loginFeedback.setAttribute("id", "wrong");
+            loginFeedback.textContent = "Wrong user name or password";
+            loadingPage.setAttribute("id", "display_none");
+            break;
+        case 418:
+            closeButton.setAttribute("id", "display_block");
+            feedbackAnswer.textContent = "The server thinks it's not a teapot!";
+            break;
     };
 };
 
