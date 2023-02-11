@@ -2,7 +2,9 @@
 
 async function userWantsToLogin() {
 
+    closeButton.setAttribute("id", "display_none");
     loadingPage.setAttribute("id", "display_flex");
+    feedbackAnswer.textContent = "Contacting server...";
     const responseObjekt = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
     console.log(responseObjekt);
 
@@ -28,7 +30,9 @@ async function userWantsToLogin() {
 
 async function userWantsToRegister() {
 
+    closeButton.setAttribute("id", "display_none");
     loadingPage.setAttribute("id", "display_flex");
+    feedbackAnswer.textContent = "Contacting server...";
     console.log(userNameInput.value);
     console.log(passwordInput.value);
     const postBody = {
