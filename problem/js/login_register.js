@@ -79,29 +79,25 @@ async function userWantsToRegister() {
 };
 
 function changeToRegisterLayout() {
-    wrapper.classList.add("register_back_color")
-    document.querySelector(".have").setAttribute("id", "display_block");
-    document.querySelector(".new").setAttribute("id", "display_none");
-    document.querySelector(".login_button").setAttribute("id", "display_none");
-    document.querySelector(".register_button").setAttribute("id", "display_block");
-    userNameInput.value = "";
-    passwordInput.value = "";
-    loginFeedback.setAttribute("id", "feedback");
-    loginFeedback.textContent = "Ready when you are...";
-    document.querySelector("h1").textContent = "REGISTER";
+    changeLayout("block", "none", "Ready when you are...", "REGISTER");
 };
-function alredyHaveAnAccount() {
-    wrapper.classList.remove("register_back_color")
-    document.querySelector(".have").setAttribute("id", "display_none");
-    document.querySelector(".new").setAttribute("id", "display_block");
-    document.querySelector(".login_button").setAttribute("id", "display_block");
-    document.querySelector(".register_button").setAttribute("id", "display_none");
-    passwordInput.value = "";
-    userNameInput.value = "";
-    loginFeedback.textContent = "Let the magic start!";
-    document.querySelector("h1").textContent = "LOGIN";
 
+function changeToLoginLayout() {
+    changeLayout("none", "block", "Let the magic start!", "LOGIN");
 };
+
+function changeLayout(blockOrNone, noneOrBlock, string, buttonString) {
+    wrapper.classList.toggle("register_back_color");
+    document.querySelector(".have").setAttribute("id", "display_" + blockOrNone);
+    document.querySelector(".new").setAttribute("id", "display_" + noneOrBlock);
+    document.querySelector(".login_button").setAttribute("id", "display_" + noneOrBlock);
+    document.querySelector(".register_button").setAttribute("id", "display_" + blockOrNone);
+    document.querySelector("h1").textContent = buttonString;
+    loginFeedback.setAttribute("id", "feedback");
+    loginFeedback.textContent = string;
+    userNameInput.value = "";
+    passwordInput.value = "";
+}
 
 function closeFeedbackPage() {
     loadingPage.setAttribute("id", "display_none");

@@ -3,7 +3,7 @@
 document.querySelector(".login_button").addEventListener("click", userWantsToLogin);
 document.querySelector(".register_button").addEventListener("click", userWantsToRegister);
 document.querySelector(".new").addEventListener("click", changeToRegisterLayout);
-document.querySelector(".have").addEventListener("click", alredyHaveAnAccount);
+document.querySelector(".have").addEventListener("click", changeToLoginLayout);
 document.querySelector(".close_button").addEventListener("click", closeFeedbackPage);
 document.querySelector(".right_or_wrong .close_button").addEventListener("click", refreshQuiz);
 document.querySelector("#logout_button").addEventListener("click", logOut);
