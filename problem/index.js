@@ -28,7 +28,7 @@ function loadingPageResult(button, display, feedback) {
 };
 
 //! TO DO
-//* gör en funktion till "loadingPage" som tar emot "id" och en sträng dvs vad som ska stå som feedback.
 //* få in alla fonts
 //* städa upp i html med classer och id
+//* fixa så att appen är responsive jämte mot de flesta mobilerna
 
