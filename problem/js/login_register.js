@@ -1,14 +1,25 @@
 "use strict"
-
+console.log("login");
 async function userWantsToLogin() {
 
     closeButton.setAttribute("id", "display_none");
     loadingPage.setAttribute("id", "display_flex");
     feedbackAnswer.textContent = "Contacting server...";
     const responseObjekt = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
-    console.log(responseObjekt);
+    // console.log(responseObjekt);
 
     if (responseObjekt.response.ok) {
+
+        let userData = {
+            userName: userNameInput.value,
+            password: passwordInput.value,
+        };
+        console.log(userData);
+        let convertedUserData = JSON.stringify(userData);
+        localStorage.setItem("userLogin", convertedUserData);
+
+
+
         loadingPage.setAttribute("id", "display_none");
         document.querySelector(".container_login").id = "display_none";
         document.querySelector(".container_quiz").id = "display_block";

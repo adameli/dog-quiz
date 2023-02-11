@@ -18,7 +18,7 @@ async function startQuiz() {
         dogsArray.push(ALL_BREEDS[randomIndex])
     };
     const randomDog = dogsArray[random_number(dogsArray.length)];
-    console.log(randomDog);
+    // console.log(randomDog);
 
 
     dogButtons.forEach(button => button.addEventListener("click", controllAnswer));
@@ -64,6 +64,7 @@ function logOut() {
     wrapper.setAttribute("id", "login_back_color");
     loginContainer.setAttribute("id", "display_flex");
     quizContainer.setAttribute("id", "display_none");
+    localStorage.removeItem("userLogin");
 }
 
 function refreshQuiz() {
