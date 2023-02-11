@@ -1,13 +1,12 @@
 
-
-let numberArray = createNumberArray(82);
+let numberArray = createNumberArray(ALL_BREEDS.length);
 
 async function startQuiz() {
     loadingForNewImage();
     dogImage.style.backgroundImage = "";
 
     if (numberArray.length === 6) {
-        numberArray = createNumberArray(82);
+        numberArray = createNumberArray(ALL_BREEDS.length);
     };
 
     buttonContainer.removeAttribute("id", "display_none");
@@ -66,13 +65,11 @@ function logOut() {
 };
 
 function refreshQuiz() {
-    console.log("hej");
     document.querySelector(".final_answer").setAttribute("id", "display_none");
     startQuiz();
 };
 
 function loadingForNewImage() {
-    loadingPage.setAttribute("id", "display_flex");
-    feedbackAnswer.textContent = "Getting a random image...";
+    loadingPageResult("display_none", "display_flex", "Getting a random image...");
     buttonContainer.setAttribute("id", "display_none");
 };

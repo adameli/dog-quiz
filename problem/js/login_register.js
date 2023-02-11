@@ -2,9 +2,8 @@
 
 async function userWantsToLogin() {
 
-    closeButton.setAttribute("id", "display_none");
-    loadingPage.setAttribute("id", "display_flex");
-    feedbackAnswer.textContent = "Contacting server...";
+    //closeButton    //loadingPage    //feedbackanswer
+    loadingPageResult("display_none", "display_flex", "Contacting server...");
     const responseObjekt = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
 
     switch (responseObjekt.response.status) {
@@ -37,11 +36,8 @@ async function userWantsToLogin() {
 
 async function userWantsToRegister() {
 
-    closeButton.setAttribute("id", "display_none");
-    loadingPage.setAttribute("id", "display_flex");
-    feedbackAnswer.textContent = "Contacting server...";
-    console.log(userNameInput.value);
-    console.log(passwordInput.value);
+    loadingPageResult("display_none", "display_flex", "Contacting server...");
+
     const postBody = {
         action: "register",
         user_name: userNameInput.value,
@@ -72,10 +68,7 @@ async function userWantsToRegister() {
 
     } catch (e) {
 
-        console.log(e);
-        loadingPage.setAttribute("id", "display_flex");
-        closeButton.setAttribute("id", "display_block");
-        feedbackAnswer.textContent = "NetworkError! Please try again.";
+        loadingPageResult("display_block", "display_flex", "NetworkError! Please try again.");
 
     };
 };
@@ -89,6 +82,7 @@ function changeToLoginLayout() {
 };
 
 function changeLayout(blockOrNone, noneOrBlock, string, buttonString) {
+
     wrapper.classList.toggle("register_back_color");
     document.querySelector(".have").setAttribute("id", "display_" + blockOrNone);
     document.querySelector(".new").setAttribute("id", "display_" + noneOrBlock);
@@ -102,6 +96,5 @@ function changeLayout(blockOrNone, noneOrBlock, string, buttonString) {
 }
 
 function closeFeedbackPage() {
-    loadingPage.setAttribute("id", "display_none");
-    feedbackAnswer.textContent = "Contacting server...";
+    loadingPageResult("display_none", "display_none", "Contacting server...");
 };

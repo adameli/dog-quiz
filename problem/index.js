@@ -13,17 +13,22 @@ const loginContainer = document.querySelector(".container_login");
 const quizContainer = document.querySelector(".container_quiz");
 const loadingPage = document.querySelector(".loading_bar");
 const loginFeedback = document.querySelector(".login_feedback");
+const feedbackAnswer = document.querySelector("#contact_server");
 const userNameInput = document.querySelector("#user_name");
 const passwordInput = document.querySelector("#password");
 const closeButton = document.querySelector(".close_button");
-const feedbackAnswer = document.querySelector("#contact_server");
 const dogImage = document.querySelector("#loading_logo");
 const dogButtons = document.querySelectorAll(".answers > button");
 const buttonContainer = document.querySelector(".answers");
 
-//! TO DO CLEAN UP
+function loadingPageResult(button, display, feedback) {
+    closeButton.setAttribute("id", button);
+    loadingPage.setAttribute("id", display);
+    feedbackAnswer.textContent = feedback;
+};
+
+//! TO DO
 //* gör en funktion till "loadingPage" som tar emot "id" och en sträng dvs vad som ska stå som feedback.
-//* optimera koden när det kommer till att gå till och från inlogningen och registreringen
 //* få in alla fonts
 //* städa upp i html med classer och id
 
