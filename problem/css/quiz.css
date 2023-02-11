@@ -1,4 +1,4 @@
-body #quiz_back_color {
+.quiz_back_color {
     background: rgb(238, 174, 202);
     background: linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 26%);
 }
@@ -56,9 +56,9 @@ body #quiz_back_color {
 }
 
 #correkt {
-    background-color: greenyellow;
+    background-color: rgba(7, 220, 40, 0.9);
 }
 
 #in_correkt {
-    background-color: coral;
+    background-color: #ff5f24;
 }

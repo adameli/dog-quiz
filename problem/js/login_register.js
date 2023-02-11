@@ -18,7 +18,7 @@ async function userWantsToLogin() {
         loadingPage.setAttribute("id", "display_none");
         document.querySelector(".container_login").id = "display_none";
         document.querySelector(".container_quiz").id = "display_block";
-        wrapper.setAttribute("id", "quiz_back_color");
+        wrapper.classList.add("quiz_back_color");
         document.querySelector("#user_name_in_quiz").textContent = responseObjekt.resource.data.user_name;
         startQuiz();
     };
@@ -79,7 +79,7 @@ async function userWantsToRegister() {
 };
 
 function changeToRegisterLayout() {
-    wrapper.setAttribute("id", "register_back_color");
+    wrapper.classList.add("register_back_color")
     document.querySelector(".have").setAttribute("id", "display_block");
     document.querySelector(".new").setAttribute("id", "display_none");
     document.querySelector(".login_button").setAttribute("id", "display_none");
@@ -91,7 +91,7 @@ function changeToRegisterLayout() {
     document.querySelector("h1").textContent = "REGISTER";
 };
 function alredyHaveAnAccount() {
-    wrapper.setAttribute("id", "login_back_color");
+    wrapper.classList.remove("register_back_color")
     document.querySelector(".have").setAttribute("id", "display_none");
     document.querySelector(".new").setAttribute("id", "display_block");
     document.querySelector(".login_button").setAttribute("id", "display_block");

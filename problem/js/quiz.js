@@ -35,7 +35,7 @@ async function startQuiz() {
         document.querySelector(".final_answer").setAttribute("id", "display_flex");
         if (event.currentTarget.textContent === randomDog.name) {
             document.querySelector(".right_or_wrong").setAttribute("id", "correkt");
-            document.querySelector(".right_or_wrong div").textContent = "CORRECT";
+            document.querySelector(".right_or_wrong div").textContent = "CORRECT!";
         } else {
             document.querySelector(".right_or_wrong").setAttribute("id", "in_correkt");
             document.querySelector(".right_or_wrong div").textContent = "I'm afraid not...:-(";
@@ -59,7 +59,7 @@ function createNumberArray(n) {
 
 function logOut() {
     console.log("logout");
-    wrapper.setAttribute("id", "login_back_color");
+    wrapper.classList.remove("quiz_back_color");
     loginContainer.setAttribute("id", "display_flex");
     quizContainer.setAttribute("id", "display_none");
     localStorage.removeItem("userLogin");

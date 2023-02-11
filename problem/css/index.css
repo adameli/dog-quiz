@@ -17,6 +17,13 @@
     --bold: "roboto_bold";
     --regular: "roboto_regular";
     --light: "roboto_light";
+    --gradient: linear-gradient(90deg,
+            #22c1c3 0%,
+            #5fbe99 10%,
+            #84bc7f,
+            #a7bb67,
+            #c8b951 70%,
+            #fdb72d 100%);
 }
 
 body {
@@ -33,11 +40,16 @@ body {
     padding: 20px;
     border-radius: 20px;
 
-    background-color: white;
+    background-image: var(--gradient);
+    background-size: 400%;
+    background-position: left;
+
 
     display: flex;
     flex-direction: column;
     position: relative;
+
+    transition: background-position .7s;
 }
 
 header {
