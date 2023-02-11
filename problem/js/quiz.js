@@ -2,14 +2,14 @@
 let numberArray = createNumberArray(ALL_BREEDS.length);
 
 async function startQuiz() {
-    loadingForNewImage();
+
+    loadingPageResult("display_none", "display_flex", "Getting a random image...");
     dogImage.style.backgroundImage = "";
 
     if (numberArray.length === 6) {
         numberArray = createNumberArray(ALL_BREEDS.length);
     };
 
-    buttonContainer.removeAttribute("id", "display_none");
     const dogsArray = [];
     for (let i = 0; i < 4; i++) {
         let randomNumber = random_number(numberArray.length);
@@ -27,6 +27,7 @@ async function startQuiz() {
 
     const responseObjektQuiz = await fetchFunction(`https://dog.ceo/api/breed/${randomDog.url}/images/random`);
 
+    buttonContainer.removeAttribute("id", "display_none");
     loadingPage.setAttribute("id", "display_none");
     dogImage.style.backgroundImage = `url('${responseObjektQuiz.resource.message}')`;
 
@@ -65,11 +66,9 @@ function logOut() {
 };
 
 function refreshQuiz() {
+
     document.querySelector(".final_answer").setAttribute("id", "display_none");
+    buttonContainer.setAttribute("id", "display_none");
     startQuiz();
 };
 
-function loadingForNewImage() {
-    loadingPageResult("display_none", "display_flex", "Getting a random image...");
-    buttonContainer.setAttribute("id", "display_none");
-};
