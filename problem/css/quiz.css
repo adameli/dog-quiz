@@ -1,3 +1,25 @@
+:root {
+    --bold: "roboto_bold";
+    --regular: "roboto_regular";
+    --light: "roboto_light";
+    --fs-XL: 12vw;
+    --fs-LL: 8vw;
+    --fs-L: 6vw;
+    --fs-M: 5vw;
+    --fs-S: 4vw;
+    --border-radius: 2vh;
+}
+
+@media (min-width: 430px) {
+    :root {
+        /* calc(var(--fs-L) * 430 / 100) */
+        --fs-LL: 34.4px;
+        --fs-L: 25.8px;
+        --fs-M: 21.5px;
+        --fs-S: 4vw;
+    }
+}
+
 .quiz_back_color {
     background: rgb(238, 174, 202);
     background: linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 26%);
@@ -12,24 +34,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 10px;
+
+    padding: .5vh 1vh;
     background-color: rgba(255, 255, 255, 0.887);
-    border-radius: 5px;
-    margin-top: 20px;
+    border-radius: .5vh;
+    margin-top: 2.5vh;
     font-family: var(--regular);
 }
 
 #logout_button,
 #logout div {
-    font-size: 18px;
+    font-size: var(--fs-L);
 }
 
 #loading_logo {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 40px;
-    border-radius: 20px;
+    margin-top: 5vh;
+    border-radius: var(--border-radius);
     height: 300px;
 }
 
@@ -47,11 +70,11 @@
 
 .answers>button {
     padding: 10px 0;
-    font-size: 17px;
+    font-size: var(--fs-L);
 }
 
 .right_or_wrong {
-    font-size: 30px;
+    font-size: var(--fs-LL);
 }
 
 #correkt {
