@@ -1,3 +1,25 @@
+:root {
+    --bold: "roboto_bold";
+    --regular: "roboto_regular";
+    --light: "roboto_light";
+    --fs-XL: 12vw;
+    --fs-L: 6vw;
+    --fs-M: 5vw;
+    --fs-S: 4vw;
+    --border-radius: 2vh;
+}
+
+@media (min-width: 430px) {
+    :root {
+        /* calc(var(--fs-L) * 430 / 100) */
+        --fs-XL: 51.6px;
+        --fs-L: 25.8px;
+        --fs-M: 21.5px;
+        --fs-S: 4vw;
+    }
+}
+
+
 .register_back_color {
     background-position: right;
 }
@@ -16,29 +38,29 @@
 
 .container_login h1 {
     font-family: var(--bold);
-    font-size: 40px;
-    margin-bottom: 40px;
+    font-size: var(--fs-XL);
+    margin-bottom: 6vh;
 }
 
 .user_pass_input {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
     font-family: var(--regular);
-    font-size: 18px;
+    font-size: var(--fs-L);
 }
 
 .user_pass_input input {
     font-family: var(--regular);
-    font-size: 16px;
-    height: 30px;
-    padding-left: 5px;
+    font-size: var(--fs-M);
+    height: 4vh;
+    padding-left: .5vh;
 }
 
 .container_login .login_feedback {
-    padding: 5px 0;
-    font-size: 14px;
-    margin: 15px 0;
+    padding: .5vh 0;
+    font-size: var(--fs-M);
+    margin: 2vh 0;
 }
 
 .container_login #wrong {
@@ -47,14 +69,14 @@
 
 .container_login .button {
     background-color: white;
-    padding: 15px 0;
-    font-size: 20px;
+    padding: 2vh 0;
+    font-size: var(--fs-L);
     cursor: pointer;
 }
 
 .container_login .register {
     text-decoration: underline;
-    font-size: 20px;
-    margin-top: 50px;
+    font-size: var(--fs-L);
+    margin-top: 5.5vh;
     cursor: pointer;
 }
