@@ -3,6 +3,8 @@
 
 frågor:
 
+fråga erik anående clac()
+
 vf funkar inte root på de andra css filerna?
 
 hur gör jag med de olika fontsen?

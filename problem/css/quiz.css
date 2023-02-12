@@ -6,7 +6,6 @@
     --fs-LL: 8vw;
     --fs-L: 6vw;
     --fs-M: 5vw;
-    --fs-S: 4vw;
     --border-radius: 2vh;
 }
 
@@ -16,7 +15,7 @@
         --fs-LL: 34.4px;
         --fs-L: 25.8px;
         --fs-M: 21.5px;
-        --fs-S: 4vw;
+
     }
 }
 
@@ -46,6 +45,7 @@
 #logout_button,
 #logout div {
     font-size: var(--fs-L);
+    cursor: pointer;
 }
 
 #loading_logo {
@@ -72,6 +72,7 @@
 .answers>button {
     padding: 10px 0;
     font-size: var(--fs-M);
+    cursor: pointer;
 }
 
 .right_or_wrong {
