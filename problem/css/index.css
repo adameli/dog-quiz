@@ -17,6 +17,13 @@
     --bold: "roboto_bold";
     --regular: "roboto_regular";
     --light: "roboto_light";
+    --fs-XL: 7vw;
+    --fs-L: 6vw;
+    --fs-M: 5vw;
+    --fs-S: 4vw;
+    --border-radius: 2vh;
+
+
     --gradient: linear-gradient(90deg,
             #22c1c3 0%,
             #5fbe99 10%,
@@ -26,19 +33,32 @@
             #fdb72d 100%);
 }
 
+@media (min-width: 430px) {
+    :root {
+        /* calc(var(--fs-L) * 430 / 100) */
+        --fs-XL: 30px;
+        --fs-L: 25.8px;
+        --fs-M: 21.5px;
+        --fs-S: 4vw;
+    }
+}
+
 body {
     margin: 0;
     background-color: black;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
     box-sizing: border-box;
     height: 100vh;
-    max-width: 340px;
-    padding: 20px;
-    border-radius: 20px;
+    /* min-height: 812px; */
+    max-width: 430px;
+    min-width: 374px;
+    padding: 2vh;
+    border-radius: var(--border-radius);
 
     background-image: var(--gradient);
     background-size: 400%;
@@ -61,18 +81,18 @@ header {
 header #logo {
     background-image: url("../media/logo.png");
     background-size: cover;
-    width: 35px;
-    height: 35px;
+    width: 5vh;
+    height: 5vh;
 }
 
 header #title {
-    font-size: 20px;
+    font-size: var(--fs-L);
     font-family: "roboto_regular";
 }
 
 footer {
     margin-top: auto;
-    font-size: 14px;
+    font-size: var(--fs-m);
     font-family: "roboto_regular";
 }
 
@@ -83,9 +103,10 @@ footer p {
 
 
 .loading_bar {
+    box-sizing: border-box;
     position: absolute;
     inset: 0;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
 
     background-color: rgba(255, 255, 255, 0.72);
     display: flex;
@@ -95,26 +116,27 @@ footer p {
 
 .loading_feedback {
     box-sizing: border-box;
-    padding: 25px 20px;
-    width: 298px;
+    width: 91vw;
+    max-width: 388px;
+    padding: 3vh 2vh;
     background-color: rgb(245, 245, 245);
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 2vh;
 
     text-align: center;
-    font-size: 19px;
+    font-size: var(--fs-L);
     font-family: var(--regular);
 }
 
 .close_button {
     width: 100%;
     font-family: var(--regular);
-    font-size: 18px;
-    padding: 10px;
+    font-size: var(--fs-M);
+    padding: 1.5vh;
     cursor: pointer;
 }
 
