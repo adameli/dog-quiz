@@ -59,7 +59,6 @@ body {
     min-width: 374px;
     padding: 2vh;
     border-radius: var(--border-radius);
-
     background-image: var(--gradient);
     background-size: 400%;
     background-position: left;
