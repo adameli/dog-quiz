@@ -13,8 +13,35 @@
     src: url("../fonts/RobotoCondensed-Light.ttf");
 }
 
-/* 
- */
+:root {
+    --bold: "roboto_bold";
+    --regular: "roboto_regular";
+    --light: "roboto_light";
+    --fs-XL: 7vw;
+    --fs-L: 6vw;
+    --fs-M: 5vw;
+    --fs-S: 4vw;
+    --border-radius: 2vh;
+
+
+    --gradient: linear-gradient(90deg,
+            #22c1c3 0%,
+            #5fbe99 10%,
+            #84bc7f,
+            #a7bb67,
+            #c8b951 70%,
+            #fdb72d 100%);
+}
+
+@media (min-width: 430px) {
+    :root {
+        /* calc(var(--fs-L) * 430 / 100) */
+        --fs-XL: 30px;
+        --fs-L: 25.8px;
+        --fs-M: 21.5px;
+        --fs-S: 4vw;
+    }
+}
 
 body {
     margin: 0;
