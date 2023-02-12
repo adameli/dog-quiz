@@ -1,8 +1,9 @@
 # dog-quiz-app
 
-jag har andvänt bredden 340 och höjden 666
 
 frågor:
+
+vf funkar inte root på de andra css filerna?
 
 hur gör jag med de olika fontsen?
 

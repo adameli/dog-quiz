@@ -17,7 +17,7 @@ async function userWantsToLogin() {
 
             loadingPage.setAttribute("id", "display_none");
             loginContainer.setAttribute("id", "display_none");
-            quizContainer.setAttribute("id", "display_block");
+            quizContainer.setAttribute("id", "display_flex");
             wrapper.classList.add("quiz_back_color");
             document.querySelector("#user_name_in_quiz").textContent = responseObjekt.resource.data.user_name;
             startQuiz();
