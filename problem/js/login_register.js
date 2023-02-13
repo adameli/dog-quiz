@@ -4,9 +4,9 @@ async function userWantsToLogin() {
 
     //closeButton    //loadingPage    //feedbackanswer
     loadingPageResult("display_none", "display_flex", "Contacting server...");
-    const responseObjekt = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
+    const responseObjektLogin = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
 
-    switch (responseObjekt.response.status) {
+    switch (responseObjektLogin.response.status) {
         case 200:
             let userData = {
                 userName: userNameInput.value,
@@ -19,7 +19,7 @@ async function userWantsToLogin() {
             loginContainer.setAttribute("id", "display_none");
             quizContainer.setAttribute("id", "display_flex");
             wrapper.classList.add("quiz_back_color");
-            document.querySelector("#user_name_in_quiz").textContent = responseObjekt.resource.data.user_name;
+            document.querySelector("#user_name_in_quiz").textContent = responseObjektLogin.resource.data.user_name;
             startQuiz();
             break;
         case 404:
@@ -74,14 +74,14 @@ async function userWantsToRegister() {
 };
 
 function changeToRegisterLayout() {
-    changeLayout("block", "none", "Ready when you are...", "REGISTER");
+    changeLogRegLayout("block", "none", "Ready when you are...", "REGISTER");
 };
 
 function changeToLoginLayout() {
-    changeLayout("none", "block", "Let the magic start!", "LOGIN");
+    changeLogRegLayout("none", "block", "Let the magic start!", "LOGIN");
 };
 
-function changeLayout(blockOrNone, noneOrBlock, string, buttonString) {
+function changeLogRegLayout(blockOrNone, noneOrBlock, string, buttonString) {
 
     wrapper.classList.toggle("register_back_color");
     document.querySelector(".have").setAttribute("id", "display_" + blockOrNone);

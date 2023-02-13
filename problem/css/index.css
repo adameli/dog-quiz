@@ -1,22 +1,31 @@
 @font-face {
-    font-family: "roboto_bold";
-    src: url("../fonts/RobotoCondensed-Bold.ttf");
+    font-family: "Roboto Condensed Bold";
+    src: url("../fonts/RobotoCondensed-Bold.ttf") format("truetype");
+    src: url("../fonts/RobotoCondensed_bold/RobotoCondensedBold.eot") format("embedded-opentype"),
+        url("../fonts/RobotoCondensed_bold/RobotoCondensedBold.woff") format("woff"),
+        url("../fonts/RobotoCondensed_bold/RobotoCondensedBold.woff2") format("woff2"),
 }
 
 @font-face {
-    font-family: "roboto_regular";
-    src: url("../fonts/RobotoCondensed-Regular.ttf")
+    font-family: "Roboto Condensed Regular";
+    src: url("../fonts/RobotoCondensed-Regular.ttf") format("truetype");
+    src: url("../fonts/RobotoCondensed_regular/RobotoCondensedRegular.eot") format("embedded-opentype"),
+        url("../fonts/RobotoCondensed_regular/RobotoCondensedRegular.woff") format("woff"),
+        url("../fonts/RobotoCondensed_regular/RobotoCondensedRegular.woff2") format("woff2"),
 }
 
 @font-face {
-    font-family: "roboto_light";
-    src: url("../fonts/RobotoCondensed-Light.ttf");
+    font-family: "Roboto Condensed Light";
+    src: url("../fonts/RobotoCondensed-Light.ttf") format("truetype");
+    src: url("../fonts/RobotoCondensed_light/RobotoCondensedLight.eot") format("embedded-opentype"),
+        url("../fonts/RobotoCondensed_light/RobotoCondensedLight.woff") format("woff"),
+        url("../fonts/RobotoCondensed_light/RobotoCondensedLight.woff2") format("woff2"),
 }
 
 :root {
-    --bold: "roboto_bold";
-    --regular: "roboto_regular";
-    --light: "roboto_light";
+    --bold: "Roboto Condensed Bold";
+    --regular: "Roboto Condensed Regular";
+    --light: "Roboto Condensed Light";
     --fs-XL: 7vw;
     --fs-L: 6vw;
     --fs-M: 5vw;
@@ -62,7 +71,6 @@ body {
     background-size: 400%;
     background-position: left;
 
-
     display: flex;
     flex-direction: column;
     position: relative;
@@ -85,20 +93,18 @@ header #logo {
 
 header #title {
     font-size: var(--fs-L);
-    font-family: "roboto_regular";
+    font-family: Roboto Condensed Regular;
 }
 
 footer {
     margin-top: auto;
     font-size: var(--fs-m);
-    font-family: "roboto_regular";
+    font-family: Roboto Condensed Regular;
 }
 
 footer p {
     margin: 0;
 }
-
-
 
 .loading_bar {
     box-sizing: border-box;

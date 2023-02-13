@@ -28,7 +28,6 @@ function loadingPageResult(button, display, feedback) {
 };
 
 //! TO DO
-//* få in alla fonts
 //* städa upp i html med classer och id
-//* fixa så att appen är responsive jämte mot de flesta mobilerna
+
 
