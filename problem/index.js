@@ -29,3 +29,4 @@ function loadingPageResult(button, display, feedback) {
 
 //! TO DO
 //* städa upp i html med classer och id
+//* ändra så att hund bilden är som en img och så att den tar sin fulla höjd
