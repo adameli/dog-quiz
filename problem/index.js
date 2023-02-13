@@ -17,7 +17,8 @@ const feedbackAnswer = document.querySelector("#contact_server");
 const userNameInput = document.querySelector("#user_name");
 const passwordInput = document.querySelector("#password");
 const closeButton = document.querySelector(".close_button");
-const dogImage = document.querySelector("#loading_logo");
+// const dogImage = document.querySelector("#loading_logo");
+const dogImage = document.querySelector(".img");
 const dogButtons = document.querySelectorAll(".answers > button");
 const buttonContainer = document.querySelector(".answers");
 

@@ -6,7 +6,7 @@
     --fs-LL: 8vw;
     --fs-L: 6vw;
     --fs-M: 5vw;
-    --border-radius: 2vh;
+    --border-radius: 3vh;
 }
 
 @media (min-width: 430px) {
@@ -27,7 +27,8 @@
 .container_quiz {
     display: none;
     flex-direction: column;
-    /* align-items: center; */
+    height: 100%;
+
 }
 
 .container_quiz #logout {
@@ -40,6 +41,7 @@
     padding: .5vh 1vh;
     border-radius: .5vh;
     margin-top: 2.5vh;
+    margin-bottom: 6vh;
 }
 
 #logout_button,
@@ -48,17 +50,14 @@
     cursor: pointer;
 }
 
-#loading_logo {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 10vh;
-    border-radius: var(--border-radius);
-    height: 40vh;
+#align {
+    margin: auto 0;
 }
 
-.dog_logo {
-    background-image: url(../media/logo.png);
+.img {
+    border-radius: var(--border-radius);
+    object-position: center;
+    width: -moz-available;
 }
 
 .answers {
@@ -66,7 +65,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     margin-top: 10px;
-    margin-bottom: 40px;
 }
 
 .answers>button {

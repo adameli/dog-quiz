@@ -29,7 +29,7 @@
     --fs-XL: 7vw;
     --fs-L: 6vw;
     --fs-M: 5vw;
-    --border-radius: 2vh;
+    --border-radius: 3vh;
 
 
     --gradient: linear-gradient(90deg,
@@ -61,11 +61,11 @@ body {
 .wrapper {
     box-sizing: border-box;
     height: 100vh;
-    /* min-height: 812px; */
     max-width: 430px;
     min-width: 374px;
     padding: 2vh;
     border-radius: var(--border-radius);
+    overflow: scroll;
 
     background-image: var(--gradient);
     background-size: 400%;
@@ -97,7 +97,7 @@ header #title {
 }
 
 footer {
-    margin-top: auto;
+    margin-top: 6vh;
     font-size: var(--fs-m);
     font-family: Roboto Condensed Regular;
 }

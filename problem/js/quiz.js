@@ -4,7 +4,7 @@ let numberArray = createNumberArray(ALL_BREEDS.length);
 async function startQuiz() {
 
     loadingPageResult("display_none", "display_flex", "Getting a random image...");
-    dogImage.style.backgroundImage = "";
+    dogImage.setAttribute("src", "./media/logo.png");
 
     if (numberArray.length === 6) {
         numberArray = createNumberArray(ALL_BREEDS.length);
@@ -29,7 +29,7 @@ async function startQuiz() {
 
     buttonContainer.removeAttribute("id", "display_none");
     loadingPage.setAttribute("id", "display_none");
-    dogImage.style.backgroundImage = `url('${responseObjektQuiz.resource.message}')`;
+    dogImage.setAttribute("src", responseObjektQuiz.resource.message)
 
     function controllAnswer(event) {
         document.querySelector(".final_answer").setAttribute("id", "display_flex");

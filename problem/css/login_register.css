@@ -5,12 +5,11 @@
     --fs-XL: 12vw;
     --fs-L: 6vw;
     --fs-M: 5vw;
-    --border-radius: 2vh;
+    --border-radius: 3vh;
 }
 
 @media (min-width: 430px) {
     :root {
-        /* calc(var(--fs-L) * 430 / 100) */
         --fs-XL: 51.6px;
         --fs-L: 25.8px;
         --fs-M: 21.5px;
@@ -25,7 +24,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: auto;
+    margin: auto 0;
 }
 
 .login {
