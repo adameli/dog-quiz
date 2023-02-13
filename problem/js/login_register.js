@@ -4,7 +4,8 @@ async function userWantsToLogin() {
 
     //closeButton    //loadingPage    //feedbackanswer
     loadingPageResult("display_none", "display_flex", "Contacting server...");
-    const responseObjektLogin = await fetchFunction(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
+    const loginRequest = new Request(`https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${userNameInput.value}&password=${passwordInput.value}`);
+    const responseObjektLogin = await fetchFunction(loginRequest);
 
     switch (responseObjektLogin.response.status) {
         case 200:
@@ -45,15 +46,15 @@ async function userWantsToRegister() {
     };
 
     try {
-
-        const post = await fetch(prefix, {
+        const registerRequest = new Request("https://teaching.maumt.se/apis/access/", {
             method: "POST",
             headers: { "Content-type": "application/json; charset=UTF-8" },
             body: JSON.stringify(postBody),
         });
+        const post = await fetchFunction(registerRequest);
 
         closeButton.setAttribute("id", "display_block");
-        switch (post.status) {
+        switch (post.response.status) {
             case 200:
                 console.log("new user have been added");
                 feedbackAnswer.textContent = "Register Complete.  Please proceed to login.";

@@ -29,5 +29,3 @@ function loadingPageResult(button, display, feedback) {
 
 //! TO DO
 //* städa upp i html med classer och id
-
-

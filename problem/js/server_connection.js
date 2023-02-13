@@ -2,11 +2,11 @@
 
 const prefix = "https://teaching.maumt.se/apis/access/";
 
-async function fetchFunction(URL) {
+async function fetchFunction(request) {
 
     try {
 
-        const serverResponse = await fetch(URL);
+        const serverResponse = await fetch(request);
         const resource = await serverResponse.json();
         return { response: serverResponse, resource: resource };
 

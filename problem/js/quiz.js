@@ -24,8 +24,8 @@ async function startQuiz() {
         dogButtons[index].textContent = dog.name;
         index++;
     });
-
-    const responseObjektQuiz = await fetchFunction(`https://dog.ceo/api/breed/${randomDog.url}/images/random`);
+    const dogRequest = new Request(`https://dog.ceo/api/breed/${randomDog.url}/images/random`);
+    const responseObjektQuiz = await fetchFunction(dogRequest);
 
     buttonContainer.removeAttribute("id", "display_none");
     loadingPage.setAttribute("id", "display_none");
