@@ -17,7 +17,6 @@ const feedbackAnswer = document.querySelector("#contact_server");
 const userNameInput = document.querySelector("#user_name");
 const passwordInput = document.querySelector("#password");
 const closeButton = document.querySelector(".close_button");
-// const dogImage = document.querySelector("#loading_logo");
 const dogImage = document.querySelector(".img");
 const dogButtons = document.querySelectorAll(".answers > button");
 const buttonContainer = document.querySelector(".answers");
@@ -28,6 +27,3 @@ function loadingPageResult(button, display, feedback) {
     feedbackAnswer.textContent = feedback;
 };
 
-//! TO DO
-//* städa upp i html med classer och id
-//* ändra så att hund bilden är som en img och så att den tar sin fulla höjd
