@@ -73,7 +73,6 @@ body {
 
     display: flex;
     flex-direction: column;
-    position: relative;
 
     transition: background-position .7s;
 }

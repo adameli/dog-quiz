@@ -27,7 +27,6 @@
     display: none;
     flex-direction: column;
     height: 100%;
-
 }
 
 .container_quiz #logout {
@@ -47,6 +46,10 @@
 #logout div {
     font-size: var(--fs-L);
     cursor: pointer;
+}
+
+#parent_container {
+    margin: auto 0;
 }
 
 #img_answer_container {
