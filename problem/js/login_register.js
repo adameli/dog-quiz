@@ -23,6 +23,11 @@ async function userWantsToLogin() {
             document.querySelector("#user_name_in_quiz").textContent = responseObjektLogin.resource.data.user_name;
             startQuiz();
             break;
+        case 400:
+            loginFeedback.setAttribute("id", "wrong");
+            loginFeedback.textContent = "Wrong user name or password";
+            loadingPage.setAttribute("id", "display_none");
+            break;
         case 404:
             loginFeedback.setAttribute("id", "wrong");
             loginFeedback.textContent = "Wrong user name or password";
@@ -58,6 +63,9 @@ async function userWantsToRegister() {
             case 200:
                 console.log("new user have been added");
                 feedbackAnswer.textContent = "Register Complete.  Please proceed to login.";
+                break;
+            case 400:
+                feedbackAnswer.textContent = "Username and Password can not be blank";
                 break;
             case 409:
                 feedbackAnswer.textContent = "Sorry that name is taken. Please try with another one.";
