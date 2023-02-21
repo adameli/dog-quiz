@@ -26,7 +26,6 @@
     --bold: "Roboto Condensed Bold";
     --regular: "Roboto Condensed Regular";
     --light: "Roboto Condensed Light";
-    --fs-XL: 7vw;
     --fs-L: 6vw;
     --fs-M: 5vw;
     --border-radius: 3vh;
@@ -43,8 +42,6 @@
 
 @media (min-width: 430px) {
     :root {
-        /* calc(var(--fs-L) * 430 / 100) */
-        --fs-XL: 30px;
         --fs-L: 25.8px;
         --fs-M: 21.5px;
     }

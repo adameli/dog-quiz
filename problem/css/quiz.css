@@ -2,7 +2,6 @@
     --bold: "Roboto Condensed Bold";
     --regular: "Roboto Condensed Regular";
     --light: "Roboto Condensed Light";
-    --fs-XL: 12vw;
     --fs-LL: 8vw;
     --fs-L: 6vw;
     --fs-M: 5vw;
@@ -14,7 +13,6 @@
         --fs-LL: 34.4px;
         --fs-L: 25.8px;
         --fs-M: 21.5px;
-
     }
 }
 
