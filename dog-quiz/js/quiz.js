@@ -66,7 +66,6 @@ function logOut() {
 };
 
 function refreshQuiz() {
-
     document.querySelector(".final_answer").setAttribute("id", "display_none");
     buttonContainer.setAttribute("id", "display_none");
     startQuiz();
